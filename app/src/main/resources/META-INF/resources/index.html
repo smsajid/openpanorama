@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Open Panorama - Your information landscapes</title>
+  	
+	<script type="module" src="https://unpkg.com/@material/mwc-drawer@canary?module"></script>
+	<script type="module" src="https://unpkg.com/@material/mwc-icon-button@canary?module"></script>
+	<script type="module" src="https://unpkg.com/@material/mwc-top-app-bar@canary?module"></script>
+	<script type="module" src="https://unpkg.com/@material/mwc-tab-bar@canary?module"></script>
+	<script type="module" src="https://unpkg.com/@material/mwc-select@canary?module"></script>
+	<script type="module" src="https://unpkg.com/@material/mwc-list@canary/mwc-list-item?module"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+	<link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<h1>Open Panorama</h1>
+	<h6>Information made simple</h6>
+	<mwc-drawer id="drawer" hasHeader type="dismissible">
+	    <span slot="title">Filters</span>
+	    <span slot="subtitle"></span>	
+	    <div>
+	        <mwc-select label="License">
+				<mwc-list-item></mwc-list-item>
+				<mwc-list-item value="0">Item 0</mwc-list-item>
+				<mwc-list-item value="1">Item 1</mwc-list-item>
+				<mwc-list-item value="2">Item 2</mwc-list-item>
+				<mwc-list-item value="3">Item 3</mwc-list-item>
+			</mwc-select>
+	    </div>
+	    <div>
+	        <mwc-select label="Organisation">
+				<mwc-list-item></mwc-list-item>
+				<mwc-list-item value="0">Item 0</mwc-list-item>
+				<mwc-list-item value="1">Item 1</mwc-list-item>
+				<mwc-list-item value="2">Item 2</mwc-list-item>
+				<mwc-list-item value="3">Item 3</mwc-list-item>
+			</mwc-select>
+	    </div>
+	    <div slot="appContent">
+	    	<div>
+		    	<mwc-icon-button id="menuButton" slot="navigationIcon" icon="menu"></mwc-icon-button>
+	        </div>
+	        <div>
+	            <mwc-tab-bar>
+					<mwc-tab label="Landscape"></mwc-tab>
+					<mwc-tab label="Card Mode"></mwc-tab>
+				</mwc-tab-bar>
+	        </div>
+	    </div>
+	</mwc-drawer>
+
+	<script>
+		menuButton.addEventListener('click', () => {
+			drawer.open = !drawer.open;
+		});
+	</script>
+</body>
+</html>
